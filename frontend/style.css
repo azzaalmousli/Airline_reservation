@@ -1,0 +1,67 @@
+:root {
+    --primary: #2563eb;
+    --bg-color: #f1f5f9;
+    --surface: #ffffff;
+    --text: #1e293b;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text);
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: var(--surface);
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover { background: #1d4ed8; }
+
+main {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.card {
+    background: var(--surface);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    max-width: 600px;
+}
+
+.ai-widget {
+    margin-top: auto;
+    background: #e0f2fe;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
