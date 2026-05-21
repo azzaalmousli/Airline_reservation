@@ -130,6 +130,8 @@ def system_costs():
 
 
 if __name__ == '__main__':
-    print("AeroSmart API (Phase 2) starting on http://127.0.0.1:5000")
-    print("Swagger docs: http://127.0.0.1:5000/apidocs")
-    app.run(port=5000, debug=True)
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
+    print(f"AeroSmart API starting on http://0.0.0.0:{port}")
+    app.run(host='0.0.0.0', port=port, debug=debug)

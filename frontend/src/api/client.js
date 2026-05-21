@@ -1,5 +1,6 @@
-// All paths are relative — Vite's proxy rewrites /api/* → http://127.0.0.1:5000/api/*
-const BASE = '/api';
+// Dev: VITE_API_URL is unset → BASE = '/api' → Vite proxy forwards to Flask:5000
+// Prod (Vercel): VITE_API_URL = 'https://your-app.up.railway.app' → direct call
+const BASE = (import.meta.env.VITE_API_URL ?? '') + '/api';
 
 async function req(path, options = {}) {
   const { body, ...rest } = options;
