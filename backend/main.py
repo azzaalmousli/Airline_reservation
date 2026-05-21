@@ -1,4 +1,5 @@
 # main.py
+import os
 import time
 from decimal import Decimal
 from datetime import datetime, date
@@ -35,7 +36,8 @@ app = Flask(__name__)
 app.json_provider_class = AeroSmartJSONProvider
 app.json = AeroSmartJSONProvider(app)
 
-CORS(app)
+_frontend_url = os.environ.get('FRONTEND_URL', '*')
+CORS(app, origins=_frontend_url)
 
 app.config['SWAGGER'] = {
     'title': 'AeroSmart RESTful API Engine',
